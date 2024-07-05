@@ -15,7 +15,6 @@ function ScrollAnimation(props) {
     const [mainStyle, setMainStyle] = useState(null)
     AOS.init();
 
-
     const handleCardStyle = () => {
         setMainStyle(
             <div className="cardWrapper">
