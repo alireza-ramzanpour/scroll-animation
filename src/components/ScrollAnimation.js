@@ -5,6 +5,7 @@ import { TfiMenuAlt } from "react-icons/tfi";
 import { TfiLayoutColumn2 } from "react-icons/tfi";
 import { TfiLayoutColumn3 } from "react-icons/tfi";
 import { TfiLayoutColumn4 } from "react-icons/tfi";
+import { BsStarFill, BsStar } from 'react-icons/bs';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -95,7 +96,7 @@ function ScrollAnimation(props) {
             arrangedData.map((items) => (
                 <div className="rowCard" >
                     {items.map(item => (
-                        <div className="card" style={{ width: `calc(100% / ${totalCols})`, height: '100%' }}
+                        <div className="product-card" style={{ width: `calc(100% / ${totalCols})`, height: '100%' }}
                             data-aos="fade-up"
                             data-aos-offset="140"
                             data-aos-delay="50"
@@ -104,11 +105,20 @@ function ScrollAnimation(props) {
                             data-aos-once="false"
                             data-aos-anchor-placement="top-bottom"
                         >
-                            <div className="imgBox">
-                                <img src={item.image} alt={item.name} />
+                            <div className="product-card__imageBox" style={{ width: '16rem', height: '16rem' }}>
+                                <img src={item.image} alt={item.name} style={{ height: '100%' }} />
                             </div>
-                            <h2>{item.name}</h2>
-                            <h3>{`${item.price}$`}</h3>
+                            <div className="product-card__content">
+                                <h3>{item.name}</h3>
+                                <h3>{`${item.price}$`}</h3>
+                                <div className="product-card__rating">
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStar className="product-card__icon" />
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -125,7 +135,7 @@ function ScrollAnimation(props) {
             arrangedData.map((items) => (
                 <div className="rowCard">
                     {items.map(item => (
-                        <div className="card" style={{ width: `calc(100% / ${totalCols})`, height: '100%' }}
+                        <div className="product-card" style={{ width: `calc(100% / ${totalCols})`, height: '100%' }}
                             data-aos="fade-up"
                             data-aos-offset="140"
                             data-aos-delay="50"
@@ -134,11 +144,20 @@ function ScrollAnimation(props) {
                             data-aos-once="false"
                             data-aos-anchor-placement="top-bottom"
                         >
-                            <div className="imgBox">
-                                <img src={item.image} alt={item.name} />
+                            <div className="product-card__imageBox" style={{ width: '18rem', height: '18rem' }}>
+                                <img src={item.image} alt={item.name} style={{ height: '100%' }} />
                             </div>
-                            <h2>{item.name}</h2>
-                            <h3>{`${item.price}$`}</h3>
+                            <div className="product-card__content">
+                                <h3>{item.name}</h3>
+                                <h3>{`${item.price}$`}</h3>
+                                <div className="product-card__rating">
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStar className="product-card__icon" />
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -155,7 +174,7 @@ function ScrollAnimation(props) {
             arrangedData.map((items) => (
                 <div className="rowCard">
                     {items.map(item => (
-                        <div className="card" style={{ width: `calc(100% / ${totalCols})`, height: '100%' }}
+                        <div className="product-card" style={{ width: `calc(100% / ${totalCols})`, height: '100%' }}
                             data-aos="fade-up"
                             data-aos-offset="140"
                             data-aos-delay="50"
@@ -164,11 +183,20 @@ function ScrollAnimation(props) {
                             data-aos-once="false"
                             data-aos-anchor-placement="top-bottom"
                         >
-                            <div className="imgBox">
+                            <div className="product-card__imageBox">
                                 <img src={item.image} alt={item.name} style={{ width: '100%' }} />
                             </div>
-                            <h2>{item.name}</h2>
-                            <h3>{`${item.price}$`}</h3>
+                            <div className="product-card__content">
+                                <h3>{item.name}</h3>
+                                <h3>{`${item.price}$`}</h3>
+                                <div className="product-card__rating">
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStarFill className="product-card__icon" />
+                                    <BsStar className="product-card__icon" />
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -195,13 +223,15 @@ function ScrollAnimation(props) {
                     </div>
                 </div>
             </div>
-            <div className='container'>
-                <div className='main'>
-
-                    {mainStyle}
-
+            <div className='main'>
+                <div className='container'>
+                    <div className='main-content'>
+                        <div className="title">
+                            <h1>All Products</h1>
+                        </div>
+                        {mainStyle}
+                    </div>
                 </div>
-
             </div>
         </>
     )
